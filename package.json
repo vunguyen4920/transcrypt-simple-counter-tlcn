@@ -1,0 +1,28 @@
+{
+  "name": "tlcn-todo-client",
+  "version": "1.0.0",
+  "description": "TLCN todo frontend",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "patch-package",
+    "build": "",
+    "start": "webpack --config webpack.config.js && webpack-dev-server --open --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "copy-webpack-plugin": "^9.0.1",
+    "transcrypt-loader": "^1.0.2",
+    "webpack": "^5.59.1",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.3.1",
+    "webpack-hot-middleware": "^2.25.1"
+  },
+  "dependencies": {
+    "patch-package": "^6.4.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}

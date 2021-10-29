@@ -1,0 +1,26 @@
+diff --git a/node_modules/transcrypt-loader/__target__/index.js b/node_modules/transcrypt-loader/__target__/index.js
+index 5623d42..45818b9 100644
+--- a/node_modules/transcrypt-loader/__target__/index.js
++++ b/node_modules/transcrypt-loader/__target__/index.js
+@@ -18,7 +18,7 @@ export var main = function (src) {
+ 		var py_module = path.join (relative_dir, fileinfo.name).py_split (path.sep).join ('.');
+ 	}
+ 	var target_path = path.join (this.rootContext, '__target__', py_module) + '.js';
+-	var import_path = './' + path.relative (fileinfo.dir, target_path);
++  	var import_path = './' + path.relative(fileinfo.dir, target_path);
+ 	var runinfo_path = path.join (this.rootContext, '__target__', relative_dir, fileinfo.name) + '.transcrypt.json';
+ 	var cmd = list ([]);
+ 	cmd.append (config ['command']);
+diff --git a/node_modules/transcrypt-loader/__target_es5__/index.js b/node_modules/transcrypt-loader/__target_es5__/index.js
+index 3fe3824..2bf4e71 100644
+--- a/node_modules/transcrypt-loader/__target_es5__/index.js
++++ b/node_modules/transcrypt-loader/__target_es5__/index.js
+@@ -41,7 +41,7 @@ var main = function main(src) {
+   }
+ 
+   var target_path = path.join(this.rootContext, '__target__', py_module) + '.js';
+-  var import_path = './' + path.relative(fileinfo.dir, target_path);
++  var import_path = './' + path.relative(fileinfo.dir, target_path).replace(/\\/g, '/');
+   var runinfo_path = path.join(this.rootContext, '__target__', relative_dir, fileinfo.name) + '.transcrypt.json';
+   var cmd = (0, _orgTranscrypt__runtime__.list)([]);
+   cmd.append(config['command']);
