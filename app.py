@@ -2,16 +2,40 @@ from lib.pyreact import consoleLog, alert, useState, render, createElement as el
 
 
 def App():
-    val, setVal = useState("")
+    count, setCount = useState(0)
 
-    def changeValue(e):
-        setVal(e.target.value)
+    def inc():
+        consoleLog(count)
+        setCount(lambda count: count + 1)
 
-    return [
-        el("h3", None, "Hello World"),
-        el("h3", None, val),
-        el("input", {"onChange": changeValue, "value": val}),
-    ]
+    def dec():
+        alert(count)
+        setCount(lambda count: count - 1)
+
+    return el(
+        "div",
+        {"className": "main"},
+        el(
+            "div",
+            {"className": "count"},
+            el("p", None, "Count: "),
+            el("p", None, count),
+        ),
+        el(
+            "div",
+            {"className": "buttons"},
+            el(
+                "button",
+                {"className": "button", "type": "button", "onClick": inc},
+                "+",
+            ),
+            el(
+                "button",
+                {"className": "button", "type": "button", "onClick": dec},
+                "-",
+            ),
+        ),
+    )
 
 
 render(App, None, "root")
