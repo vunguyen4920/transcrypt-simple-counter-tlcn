@@ -1,16 +1,27 @@
-from lib.pyreact import consoleLog, alert, useState, render, createElement as el
+from lib.pyreact import console, alert, useState, render, createElement as el
+from lib.emoji import node_emoji
 
 
+# TODO: Add styles
 def App():
     count, setCount = useState(0)
 
     def inc():
-        consoleLog(count)
+        console.log(count)
         setCount(lambda count: count + 1)
 
     def dec():
         alert(count)
         setCount(lambda count: count - 1)
+
+    def Thumbs(props):
+        return el(
+            "div",
+            None,
+            el("span", None, node_emoji.find("thumbsup").emoji)
+            if props.count > 5
+            else el("span", None, node_emoji.find("thumbsdown").emoji),
+        )
 
     return el(
         "div",
@@ -20,6 +31,7 @@ def App():
             {"className": "count"},
             el("p", None, "Count: "),
             el("p", None, count),
+            el(Thumbs, {"count": count}, None),
         ),
         el(
             "div",

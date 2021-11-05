@@ -23,7 +23,7 @@ The whole ideas of JavaScript function mappings to Python identifiers is to sepa
 """
 # JavaScript function mappings
 alert = window.alert
-consoleLog = window.console.log
+console = window.console
 
 # Map React javaScript objects to Python identifiers
 createElement = React.createElement
