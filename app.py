@@ -1,3 +1,4 @@
+from lib.jsutil import NODE_ENV
 from lib.pyreact import console, alert, useState, render, createElement as el
 from lib.emoji import node_emoji
 
@@ -5,6 +6,8 @@ from lib.emoji import node_emoji
 # TODO: Add styles
 def App():
     count, setCount = useState(0)
+
+    console.log(NODE_ENV)
 
     def inc():
         console.log(count)
