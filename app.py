@@ -1,5 +1,5 @@
-from lib.jsutil import NODE_ENV
-from lib.pyreact import console, alert, useState, render, createElement as el
+from lib.jsutil import NODE_ENV, console, alert
+from lib.pyreact import useState, render, createElement as el
 from lib.emoji import node_emoji
 
 
