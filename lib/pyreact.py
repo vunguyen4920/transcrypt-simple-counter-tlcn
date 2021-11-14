@@ -6,8 +6,6 @@ ReactDOM = require("react-dom")
 This is `render` function calls the `render` in ReactDOM.
 This function literally pass all parameters that the ReactDOM.render wants
 """
-
-
 def render(root_component, props, container):
     def main():
         ReactDOM.render(
